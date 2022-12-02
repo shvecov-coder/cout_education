@@ -1,4 +1,96 @@
-html, body {
+html,
+body {
     box-sizing: border-box;
 }
 
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1240px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #070A1B;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top__logo {
+    font-size: 32px;
+    line-height: 43px;
+    padding: 20px 0;
+}
+
+.menu-item {
+    color: #fff;
+    font-size: 18px;
+    line-height: 100px;
+    padding: 20px 5px;
+}
+
+.menu-item:hover {
+    background-color: #fff;
+}
+
+.menu-item+.menu-item {
+    margin-left: 40px;
+}
+
+.prew {
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.prew-title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 65px;
+    margin-bottom: 15px;
+}
+
+.prew-descr {
+    font-size: 36px;
+    line-height: 49px;
+    margin-bottom: 15px;
+}
+
+.prew-btn {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 14px 140px;
+    background-color: #44A5FF;
+    color: #fff;
+    display: inline-block;
+}
+
+.prew-inner {
+    /* height: calc(100vh - 100px); */
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;;
+}
