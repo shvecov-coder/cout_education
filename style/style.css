@@ -1,12 +1,33 @@
 :root {
-    --gradient: linear-gradient(180deg, #070A1B 0%, #2A3170 100%), #FFFFFF;
-    
-    --blackBlue: #070A1B;
+    --accentBlue: #070A1B;
+    --accentOrange: #E9591C;
+    --accentblueLight: #2A3170;
+
     --blue: #171d43;
     --mainColorText: #ededed;
-    
+
     --btnColorBlud: #44A5FF;
     --btnColorBludHover: #3487d6;
+}
+
+/* для Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accentblueLight) var(--accentOrange);
+}
+
+/* для Хромиум  */
+*::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--accentOrange);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--accentblueLight);
 }
 
 @font-face {
@@ -29,11 +50,20 @@
 
 @font-face {
     font-family: 'Oswald';
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+    src: url('../fonts/Oswald-Medium.woff2') format('woff2'),
+        url('../fonts/Oswald-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Oswald';
     font-weight: 600;
     font-display: swap;
     font-style: normal;
     src: url('../fonts/Oswald-SemiBold.woff2') format('woff2'),
-        url('../fonts/Oswald-SemiBold.woff') format('woff'); 
+        url('../fonts/Oswald-SemiBold.woff') format('woff');
 }
 
 @font-face {
@@ -42,12 +72,13 @@
     font-display: swap;
     font-style: normal;
     src: url('../fonts/Oswald-Bold.woff2') format('woff2'),
-        url('../fonts/Oswald-Bold.woff') format('woff'),
+        url('../fonts/Oswald-Bold.woff') format('woff');
 }
 
 html,
 body {
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 *,
@@ -64,9 +95,10 @@ body {
     font-family: 'Oswald', sans-serif;
     color: var(--mainColorText);
     font-size: 16px;
-    line-height: 19px;
+    line-height: 22px;
     font-weight: 400;
-    background: var(--gradient);
+    background: linear-gradient(180deg, var(--accentBlue) 0%,
+            var(--accentblueLight) 100%), #FFFFFF;
 }
 
 .container {
@@ -75,8 +107,43 @@ body {
     margin: 0 auto;
 }
 
+.section-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title h2 {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 49px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 0 120px;
+    position: relative;
+}
+
+.section-title h2::after,
+.section-title h2::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: var(--accentOrange);
+}
+
+.section-title h2::after {
+    left: 0;
+}
+
+.section-title h2::before {
+    right: 0;
+}
+
 .header {
-    background-color: var(--blackBlue);
+    background-color: var(--accentBlue);
     position: fixed;
     left: 0;
     right: 0;
@@ -130,6 +197,14 @@ body {
     background-position: center center;
 }
 
+.prew-inner {
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
 .prew-inner__box {
     max-width: 480px;
     padding: 20px 0;
@@ -139,7 +214,7 @@ body {
     font-weight: 700;
     font-size: 48px;
     line-height: 50px;
-    -webkit-text-stroke: 1px var(--btnColorBlud);
+    -webkit-text-stroke: 1px var(--accentOrange);
     margin-bottom: 15px;
 }
 
@@ -147,7 +222,7 @@ body {
     font-weight: 500;
     font-size: 36px;
     line-height: 49px;
-    -webkit-text-stroke: .5px var(--btnColorBlud);
+    -webkit-text-stroke: .5px var(--accentOrange);
     margin-bottom: 20px;
 }
 
@@ -167,14 +242,64 @@ body {
     background-color: var(--btnColorBludHover);
 }
 
-.prew-inner {
-    height: 700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;;
+.teams {
+    padding: 100px 0;
 }
 
-.education {
+.teams-inner {
+    display: flex;
+    justify-content: space-between;
+}
 
-    height: 4000px;
+.team-item {
+    width: 370px;
+    background-color: var(--mainColorText);
+    padding: 30px 20px;
+    color: #000000;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-name {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: var(--accentBlue);
+    margin-bottom: 20px;
+}
+
+.team-descr {
+    margin-bottom: 20px;
+}
+
+.team-prof {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.team-prof span{
+    color: var(--accentOrange);
+}
+
+.no-avatar {
+    background-color: gray;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
 }
