@@ -1,3 +1,50 @@
+:root {
+    --gradient: linear-gradient(180deg, #070A1B 0%, #2A3170 100%), #FFFFFF;
+    
+    --blackBlue: #070A1B;
+    --blue: #171d43;
+    --mainColorText: #ededed;
+    
+    --btnColorBlud: #44A5FF;
+    --btnColorBludHover: #3487d6;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+    src: url('../fonts/Oswald-Light.woff2') format('woff2'),
+        url('../fonts/Oswald-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+    src: url('../fonts/Oswald-Regular.woff2') format('woff2'),
+        url('../fonts/Oswald-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+    src: url('../fonts/Oswald-SemiBold.woff2') format('woff2'),
+        url('../fonts/Oswald-SemiBold.woff') format('woff'); 
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+    src: url('../fonts/Oswald-Bold.woff2') format('woff2'),
+        url('../fonts/Oswald-Bold.woff') format('woff'),
+}
+
 html,
 body {
     box-sizing: border-box;
@@ -15,10 +62,11 @@ a {
 
 body {
     font-family: 'Oswald', sans-serif;
-    color: #fff;
+    color: var(--mainColorText);
     font-size: 16px;
     line-height: 19px;
     font-weight: 400;
+    background: var(--gradient);
 }
 
 .container {
@@ -28,7 +76,10 @@ body {
 }
 
 .header {
-    background-color: #070A1B;
+    background-color: var(--blackBlue);
+    position: fixed;
+    left: 0;
+    right: 0;
 }
 
 .header-top {
@@ -37,60 +88,93 @@ body {
     align-items: center;
 }
 
-.header-top__logo {
+.header-top__logo-link {
+    display: block;
     font-size: 32px;
-    line-height: 43px;
-    padding: 20px 0;
+    line-height: 100px;
+    padding: 0 20px;
+    color: var(--mainColorText);
+    transition: background .3s ease;
+}
+
+.header-top__logo-link:hover {
+    background-color: var(--blue);
+}
+
+.menu-list {
+    display: flex;
 }
 
 .menu-item {
-    color: #fff;
-    font-size: 18px;
-    line-height: 100px;
-    padding: 20px 5px;
+    transition: background .3s ease;
 }
 
 .menu-item:hover {
-    background-color: #fff;
+    background-color: var(--blue);
 }
 
-.menu-item+.menu-item {
-    margin-left: 40px;
+.menu-link {
+    display: block;
+    color: var(--mainColorText);
+    padding: 0 20px;
+    line-height: 100px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .prew {
-    background-image: url('../images/bg.jpg');
+    padding-top: 100px;
+    background-image: url('../images/back.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
+.prew-inner__box {
+    max-width: 480px;
+    padding: 20px 0;
+}
+
 .prew-title {
     font-weight: 700;
     font-size: 48px;
-    line-height: 65px;
+    line-height: 50px;
+    -webkit-text-stroke: 1px var(--btnColorBlud);
     margin-bottom: 15px;
 }
 
 .prew-descr {
+    font-weight: 500;
     font-size: 36px;
     line-height: 49px;
-    margin-bottom: 15px;
+    -webkit-text-stroke: .5px var(--btnColorBlud);
+    margin-bottom: 20px;
 }
 
 .prew-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 18px;
     line-height: 24px;
     padding: 14px 140px;
-    background-color: #44A5FF;
-    color: #fff;
-    display: inline-block;
+    background-color: var(--btnColorBlud);
+    color: var(--mainColorText);
+    transition: background .3s ease;
+}
+
+.prew-btn:hover {
+    background-color: var(--btnColorBludHover);
 }
 
 .prew-inner {
-    /* height: calc(100vh - 100px); */
     height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;;
+}
+
+.education {
+
+    height: 4000px;
 }
