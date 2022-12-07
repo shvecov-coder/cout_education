@@ -293,7 +293,7 @@ body {
     margin-top: auto;
 }
 
-.team-prof span{
+.team-prof span {
     color: var(--accentOrange);
 }
 
@@ -303,4 +303,42 @@ body {
     width: 250px;
     height: 250px;
     margin-bottom: 20px;
+}
+
+.hackathon {
+    padding-top: 100px;
+}
+
+.hackathon-inner__top {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.hackathon-inner__top-item {
+    flex: 1 1 0;
+}
+
+.hackathon-inner__top-item+.hackathon-inner__top-item {
+    margin-left: 40px;
+}
+
+.hackathon-inner__top-item__title img {
+    display: block;
+    margin: 0 auto;
+
+}
+
+.hackathon-inner__top-item__descr{
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.hackathon-inner__top-item__descr span{
+    display: block;
+    color: var(--accentOrange);
+    font-weight: 600;
+    margin-bottom: 10px;
 }
