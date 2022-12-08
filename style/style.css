@@ -4,6 +4,7 @@
     --accentblueLight: #2A3170;
 
     --blue: #171d43;
+    --darkBlue: #040A21;
     --mainColorText: #ededed;
 
     --btnColorBlud: #44A5FF;
@@ -243,6 +244,79 @@ body {
     background-color: var(--btnColorBludHover);
 }
 
+.hackathon {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.hackathon-inner__top {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.hackathon-inner__top-item {
+    flex: 1 1 0;
+}
+
+.hackathon-inner__top-item+.hackathon-inner__top-item {
+    margin-left: 40px;
+}
+
+.hackathon-inner__top-item__title img {
+    display: block;
+    margin: 0 auto;
+
+}
+
+.hackathon-inner__top-item__descr {
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.hackathon-inner__top-item__descr span {
+    display: block;
+    color: var(--accentOrange);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.statistic {
+    background-color: var(--darkBlue);
+}
+
+.statistic__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 90px 10px;
+}
+
+.statistic__item {
+    flex: 1 1 0;
+}
+
+.statistic__item + .statistic__item {
+    border-left: 4px solid var(--accentOrange);
+}
+
+.statistic__item-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 20px;
+}
+
+.statistic__item-num {
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 130px;
+}
+
+
 .teams {
     padding: 100px 0;
 }
@@ -295,50 +369,4 @@ body {
 
 .team-prof span {
     color: var(--accentOrange);
-}
-
-.no-avatar {
-    background-color: gray;
-    border-radius: 50%;
-    width: 250px;
-    height: 250px;
-    margin-bottom: 20px;
-}
-
-.hackathon {
-    padding-top: 100px;
-}
-
-.hackathon-inner__top {
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
-.hackathon-inner__top-item {
-    flex: 1 1 0;
-}
-
-.hackathon-inner__top-item+.hackathon-inner__top-item {
-    margin-left: 40px;
-}
-
-.hackathon-inner__top-item__title img {
-    display: block;
-    margin: 0 auto;
-
-}
-
-.hackathon-inner__top-item__descr{
-    text-align: center;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
-}
-
-.hackathon-inner__top-item__descr span{
-    display: block;
-    color: var(--accentOrange);
-    font-weight: 600;
-    margin-bottom: 10px;
 }
