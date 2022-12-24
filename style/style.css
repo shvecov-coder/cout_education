@@ -90,6 +90,7 @@ body {
 
 a {
     text-decoration: none;
+    display: block;
 }
 
 body {
@@ -153,6 +154,10 @@ body {
 
 .section-title h2::before {
     right: 0;
+}
+
+.media-btn {
+    display: none;
 }
 
 .header {
@@ -439,13 +444,67 @@ body {
     color: var(--accentOrange);
 }
 
-.about,
+.footer {
+    padding: 40px 0;
+    background-color: var(--accentBlue);
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.footer__social-title,
+.footer__menu-title,
+.footer__contacts-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+    color: var(--accentOrange);
+    margin-bottom: 30px;
+}
+
+.footer__social-ico {
+    display: flex;
+}
+
+.footer__social-ico a + a{
+    margin-left: 20px;
+}
+
+.footer__menu-list {
+    list-style: none;
+}
+
+.footer__menu-link {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: var(--mainColorText);
+}
+
+.footer__menu-item + .footer__menu-item {
+    margin-top: 5px;
+}
+
+.footer__adress a{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: var(--mainColorText);
+}
+
+.footer__adress a + a {
+    margin-top: 5px;
+}
+
+/* .about,
 .hackathon,
 .statistic,
 .teams {
     display: none;
-}
-
+} */
 
 
 @media (max-width: 1000px) {
@@ -495,6 +554,10 @@ body {
         line-height: 1.2;
     }
 
+    .media-btn {
+        display: block;
+    }
+
     .menu-list {
         display: block;
         position: absolute;
@@ -505,10 +568,10 @@ body {
         text-align: center;
         z-index: -1;
         transform: translateY(-200%);
-        transition: transform .3s;
     }
 
     .menu-list--active {
+        transition: transform .3s;
         transform: translateY(0);
     }
 }
