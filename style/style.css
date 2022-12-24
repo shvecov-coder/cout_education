@@ -108,6 +108,18 @@ body {
     margin: 0 auto;
 }
 
+.btn {
+    display: block;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 70px;
@@ -149,9 +161,11 @@ body {
     left: 0;
     right: 0;
     z-index: 10000;
+    position: relative;
 }
 
 .header-top {
+    background-color: var(--accentBlue);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -294,7 +308,7 @@ body {
     list-style: none;
 }
 
-.about-inner__project-item + .about-inner__project-item {
+.about-inner__project-item+.about-inner__project-item {
     margin-top: 25px;
 }
 
@@ -423,4 +437,120 @@ body {
 
 .team-prof span {
     color: var(--accentOrange);
+}
+
+.about,
+.hackathon,
+.statistic,
+.teams {
+    display: none;
+}
+
+
+
+@media (max-width: 1000px) {
+    .prew-inner__box {
+        max-width: 450px;
+    }
+
+    .prew-title {
+        font-size: 42px;
+        line-height: 1.1;
+    }
+
+    .prew-descr {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 850px) {
+    .prew-inner__box {
+        max-width: 400px;
+    }
+
+    .prew-title {
+        font-size: 35px;
+        line-height: 1.1;
+    }
+
+    .prew-descr {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 720px) {
+    .prew-inner__box {
+        max-width: 380px;
+    }
+
+    .prew-title {
+        font-size: 30px;
+        line-height: 1.1;
+    }
+
+    .prew-descr {
+        font-size: 25px;
+        line-height: 1.2;
+    }
+
+    .menu-list {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 93px;
+        background-color: var(--darkBlue);
+        text-align: center;
+        z-index: -1;
+        transform: translateY(-200%);
+        transition: transform .3s;
+    }
+
+    .menu-list--active {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 550px) {
+    .prew-inner__box {
+        max-width: 320px;
+    }
+
+    .prew-title {
+        font-size: 30px;
+        line-height: 1.1;
+    }
+
+    .prew-descr {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    .prew-btn {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+@media (max-width: 400px) {
+    .prew-inner__box {
+        max-width: 300px;
+    }
+
+    .prew-title {
+        font-size: 25px;
+        line-height: 1.1;
+    }
+
+    .prew-descr {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .prew-btn {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 }
